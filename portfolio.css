@@ -1,166 +1,236 @@
-/* Set basic styles */
+/* Global styles */
 
-* {
-  box-sizing: border-box;
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #333;
-}
-
-/* Style header and navigation */
-
 header {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 nav ul {
-  list-style: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
   display: flex;
+  justify-content: flex-end;
 }
 
-nav ul li {
-  margin-right: 20px;
+nav li {
+  margin: 0 10px;
 }
 
-nav ul li:last-child {
-  margin-right: 0;
-}
-
-nav ul li a {
-  color: #fff;
+nav a {
+  color: #333;
   text-decoration: none;
-  font-weight: bold;
-  transition: all 0.3s ease;
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 
-nav ul li a:hover {
-  color: #ff3e00;
+nav a:hover {
+  color: #555;
 }
 
-/* Style hero section */
+main {
+  margin-top: 80px;
+}
 
 .hero {
-  background-image: url('https://via.placeholder.com/1200x600');
+  background-image: url('https://via.placeholder.com/1920x1080');
   background-size: cover;
-  background-position: center center;
-  height: 600px;
+  background-position: center;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
   color: #fff;
-  padding: 20px;
+  text-align: center;
 }
 
 .hero h1 {
-  font-size: 48px;
-  margin-bottom: 20px;
+  font-size: 3rem;
+  margin-bottom: 0;
 }
 
 .hero p {
-  font-size: 24px;
-  margin-bottom: 40px;
+  font-size: 1.5rem;
+  margin-top: 0;
 }
 
 .button {
-  background-color: #ff3e00;
+  display: inline-block;
+  background-color: #333;
   color: #fff;
+  font-size: 1.2rem;
+  font-weight: 500;
   padding: 10px 20px;
+  border-radius: 5px;
   text-decoration: none;
-  font-weight: bold;
-  transition: all 0.3s ease;
+  margin-top: 20px;
 }
 
 .button:hover {
-  background-color: #fff;
-  color: #ff3e00;
-  border: 2px solid #ff3e00;
+  background-color: #555;
 }
 
-/* Style about section */
-
-#about {
-  padding: 50px;
+section {
+  margin: 100px 0;
 }
 
-#about h2 {
-  font-size: 36px;
-  margin-bottom: 20px;
+section h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
-#about p {
-  font-size: 18px;
-  margin-bottom: 40px;
+.portfolio-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 50px;
 }
 
-/* Style portfolio section */
+.portfolio-item {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.portfolio-item img {
+  width: 100%;
+}
+
+.portfolio-item h3 {
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+.portfolio-item p {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+}
+
+label {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  text-decoration: none;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #555
+
+}
+
+/* Portfolio Section */
+
 
 #portfolio {
-  background-color: #f1f1f1;
-  padding: 50px;
-}
-
-#portfolio h2 {
-  font-size: 36px;
-  margin-bottom: 20px;
+  background-color: #f2f2f2;
+  padding: 50px 0;
 }
 
 .portfolio-items {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .portfolio-item {
-  flex-basis: calc(33.33% - 20px);
-  margin-right: 20px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  padding: 10px;
-  transition: all 0.3s ease;
-}
-
-.portfolio-item:hover {
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  margin-bottom: 50px;
+  width: calc(33.333% - 20px);
 }
 
 .portfolio-item img {
-  max-width: 100%;
-  height: auto;
+  width: 100%;
 }
 
 .portfolio-item h3 {
-  font-size: 24px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 15px 0;
 }
 
 .portfolio-item p {
-  font-size: 16px;
   margin-bottom: 20px;
 }
 
-/* Style contact section */
+/* Contact Section */
 
 #contact {
-  padding: 50px;
+  background-color: #fff;
+  padding: 50px 0;
 }
 
-#contact h2 {
-  font-size: 36px;
-  margin-bottom:
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+
+textarea {
+  height: 150px;
+}
+
+button[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+/* Footer */
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
 }
