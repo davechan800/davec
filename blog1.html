@@ -2,142 +2,237 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Blog</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/flexslider.css">
-    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Blog</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css"
+    integrity="sha512-2yP8wH+F7y7MbD31bFv5W9ZCkEpH2+oAIXo2W0XU9XgMlbzWwOX4wFxzA4Q0KSLiHco7y6rjwAv8Ym9Dn+7Tsg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600&display=swap"
+    rel="stylesheet">
+
+  <style>
+    body {
+      background: #f7f8fa;
+      font-family: 'Inter', sans-serif;
+      color: #333;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+    }
+
+    main {
+      margin-top: 2rem;
+    }
+
+    article {
+      background: #fff;
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    article:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    article h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      color: #222;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    article p,
+    article li {
+      font-size: 1rem;
+    }
+
+    article em {
+      color: #6c63ff;
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    aside {
+      background: #fff;
+      border-left: 5px solid #6c63ff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 2rem;
+    }
+
+    aside h3 {
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 1rem;
+      color: #6c63ff;
+    }
+
+    footer {
+      background: #222;
+      color: #ccc;
+      text-align: center;
+      padding: 1rem 0;
+      margin-top: 3rem;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      aside {
+        margin-top: 2rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <div class="container-wrap">
-        <header class="bg-dark text-white py-3">
-            <div class="container">
-                <h1 class="display-4">My Blog</h1>
-            </div>
-        </header>
+  <div class="container-wrap">
+    <header>
+      <div class="container">
+        <h1>My Blog</h1>
+      </div>
+    </header>
 
-        <main class="container py-4">
-            <div class="row">
-                <div class="col-md-8">
-                    <div id="qualitytime"></div>
-                    <article>
-                        <h3>When Time and Quality Miss the Point</h3>
-                        <p>
-                            A few months ago, I was building a small feature for a side project — something that should have taken a few hours.  
-                            But somewhere along the way, I realized I was obsessing over how <em>fast</em> I was finishing it, and whether it was “high quality.”  
-                            I stopped and asked myself — what do those words even mean in software?
-                        </p>
+    <main class="container py-4">
+      <div class="row">
+        <div class="col-md-8">
+          <article id="qualitytime">
+            <h3>When Time and Quality Miss the Point</h3>
+            <p>
+              A few months ago, I was building a small feature for a side project — something that should have taken a few hours.
+              But somewhere along the way, I realized I was obsessing over how <em>fast</em> I was finishing it, and whether it was “high quality.”
+              I stopped and asked myself — what do those words even mean in software?
+            </p>
 
-                        <p>
-                            In cooking, you can measure time and quality. A pizza takes 20 minutes, and you can tell if it’s burnt.  
-                            But software isn’t a pizza. It’s not about turning dough into something edible.  
-                            It’s more like building a new language — one where the alphabet keeps evolving as you write.
-                        </p>
+            <p>
+              In cooking, you can measure time and quality. A pizza takes 20 minutes, and you can tell if it’s burnt.
+              But software isn’t a pizza. It’s not about turning dough into something edible.
+              It’s more like building a new language — one where the alphabet keeps evolving as you write.
+            </p>
 
-                        <p>
-                            The idea of “time” in software came from manufacturing — where work was predictable.  
-                            And “quality” came from engineering — where parts either fit or fail.  
-                            But in software, the problem itself changes as you solve it.  
-                            What looks like “slow progress” might actually be deep learning;  
-                            what looks “high quality” today might become irrelevant next month.
-                        </p>
+            <p>
+              The idea of “time” in software came from manufacturing — where work was predictable.
+              And “quality” came from engineering — where parts either fit or fail.
+              But in software, the problem itself changes as you solve it.
+              What looks like “slow progress” might actually be deep learning;
+              what looks “high quality” today might become irrelevant next month.
+            </p>
 
-                        <p>
-                            A friend once said, “Software grows, it isn’t built.”  
-                            That line stayed with me. Growth doesn’t have deadlines or grades.  
-                            It just needs space — to explore, to fail, to understand.
-                        </p>
+            <p>
+              A friend once said, “Software grows, it isn’t built.”
+              That line stayed with me. Growth doesn’t have deadlines or grades.
+              It just needs space — to explore, to fail, to understand.
+            </p>
 
-                        <p>
-                            Maybe that’s what bothers me about words like <em>time</em> and <em>quality</em>.  
-                            They make software sound like a factory when it’s really a conversation —  
-                            between your mind and the machine, between the idea and what it becomes.
-                        </p>
-                    </article>
+            <p>
+              Maybe that’s what bothers me about words like <em>time</em> and <em>quality</em>.
+              They make software sound like a factory when it’s really a conversation —
+              between your mind and the machine, between the idea and what it becomes.
+            </p>
+          </article>
 
-                    <article>
-                        <h3>The Benefits of Custom Software Development for Your Business</h3>
-                        <p>In today's rapidly changing business landscape, having custom software can give your business
-                            a competitive edge. Here are some benefits of custom software development for your business:
-                        </p>
-                        <ul>
-                            <li>Tailored to Your Specific Needs...</li>
-                            <li>Increased Efficiency...</li>
-                            <li>Better Data Management...</li>
-                            <li>Improved Customer Experience...</li>
-                            <li>Scalability...</li>
-                            <li>Competitive Advantage...</li>
-                            <li>Security...</li>
-                            <li>Integration with Existing Systems...</li>
-                            <li>Cost-Effective...</li>
-                            <li>Greater Control...</li>
-                        </ul>
-                    </article>
+          <article>
+            <h3>The Benefits of Custom Software Development for Your Business</h3>
+            <p>In today's rapidly changing business landscape, having custom software can give your business
+              a competitive edge. Here are some benefits of custom software development for your business:</p>
+            <ul>
+              <li>Tailored to Your Specific Needs...</li>
+              <li>Increased Efficiency...</li>
+              <li>Better Data Management...</li>
+              <li>Improved Customer Experience...</li>
+              <li>Scalability...</li>
+              <li>Competitive Advantage...</li>
+              <li>Security...</li>
+              <li>Integration with Existing Systems...</li>
+              <li>Cost-Effective...</li>
+              <li>Greater Control...</li>
+            </ul>
+          </article>
 
-                    <div id="apptrend"></div>
-                    <article>
-                        <h3>The Future of Mobile Apps: Trends and Predictions for 2023</h3>
-                        <p>As we move into 2023, the world of mobile apps is constantly evolving...</p>
-                        <ul>
-                            <li>AR and VR will become more mainstream...</li>
-                            <li>AI will continue to be a game-changer...</li>
-                            <li>The demand for on-demand apps will increase...</li>
-                            <li>PWAs will become more popular...</li>
-                            <li>Mobile app security will become a top priority...</li>
-                        </ul>
-                        <p>By staying up-to-date with these trends, businesses can create mobile apps that provide a
-                            seamless and personalized user experience.</p>
-                    </article>
+          <article id="apptrend">
+            <h3>The Future of Mobile Apps: Trends and Predictions for 2023</h3>
+            <p>As we move into 2023, the world of mobile apps is constantly evolving...</p>
+            <ul>
+              <li>AR and VR will become more mainstream...</li>
+              <li>AI will continue to be a game-changer...</li>
+              <li>The demand for on-demand apps will increase...</li>
+              <li>PWAs will become more popular...</li>
+              <li>Mobile app security will become a top priority...</li>
+            </ul>
+            <p>By staying up-to-date with these trends, businesses can create mobile apps that provide a
+              seamless and personalized user experience.</p>
+          </article>
 
-                    <div id="ecom"></div>
-                    <article>
-                        <h3>10 Essential Features Every Ecommerce Store Should Have</h3>
-                        <ul>
-                            <li>User-friendly interface...</li>
-                            <li>Mobile responsiveness...</li>
-                            <li>Fast loading speed...</li>
-                            <li>Clear product descriptions...</li>
-                            <li>High-quality product images...</li>
-                            <li>Secure payment gateways...</li>
-                            <li>Customer reviews...</li>
-                            <li>Customer service options...</li>
-                            <li>Abandoned cart recovery...</li>
-                            <li>Analytics and reporting...</li>
-                        </ul>
-                        <p>At CmDev software solutions, we specialize in creating ecommerce stores that incorporate all these
-                            essential features and more.</p>
-                    </article>
-                </div>
+          <article id="ecom">
+            <h3>10 Essential Features Every Ecommerce Store Should Have</h3>
+            <ul>
+              <li>User-friendly interface...</li>
+              <li>Mobile responsiveness...</li>
+              <li>Fast loading speed...</li>
+              <li>Clear product descriptions...</li>
+              <li>High-quality product images...</li>
+              <li>Secure payment gateways...</li>
+              <li>Customer reviews...</li>
+              <li>Customer service options...</li>
+              <li>Abandoned cart recovery...</li>
+              <li>Analytics and reporting...</li>
+            </ul>
+            <p>At CmDev software solutions, we specialize in creating ecommerce stores that incorporate all these
+              essential features and more.</p>
+          </article>
+        </div>
 
-                <div class="col-md-4">
-                    <aside>
-                        <h3>About Me</h3>
-                        <p>Hi, I'm Dave! As a software engineer with over 20 years of experience, I’ve worked on a wide range of projects, 
-                            from enterprise systems to small, innovative startups. I’m driven by curiosity and the joy of solving problems 
-                            with clean, thoughtful code.</p>
-                    </aside>
-                </div>
-            </div>
-        </main>
+        <div class="col-md-4">
+          <aside>
+            <h3>About Me</h3>
+            <p>Hi, I'm Dave! As a software engineer with over 20 years of experience, I’ve worked on a wide range of projects,
+              from enterprise systems to small, innovative startups. I’m driven by curiosity and the joy of solving problems
+              with clean, thoughtful code.</p>
+          </aside>
+        </div>
+      </div>
+    </main>
 
-        <footer class="bg-light py-3">
-            <div class="container">
-                <p>&copy; 2025 My Blog</p>
-            </div>
-        </footer>
-    </div>
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 My Blog</p>
+      </div>
+    </footer>
+  </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.min.js"
-        integrity="sha512-MRBC5X5NFgA5vdD+nsUsLJHw3AxAMlQOIRaA/2gFY1kRf5ue5bNzvkSyD0IIfpdLnFqOxSL6UCI4YDjU98V4lA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"
+    integrity="sha512-MRBC5X5NFgA5vdD+nsUsLJHw3AxAMlQOIRaA/2gFY1kRf5ue5bNzvkSyD0IIfpdLnFqOxSL6UCI4YDjU98V4lA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
+
 </html>
