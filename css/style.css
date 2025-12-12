@@ -1428,6 +1428,7 @@ body.offcanvas {
 .js .animate-box {
   opacity: 0; }
 
+
 /* ---------- Hero tidy-up (place after existing CSS) ---------- */
 .hero-header { 
   position: relative;
@@ -1435,7 +1436,7 @@ body.offcanvas {
   display: flex;
   align-items: center;
   margin-bottom: 6em;
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,10,30,0.04)), url('../images/hero-bg.jpg') center/cover no-repeat;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,10,30,0.04));
 }
 
 .hero-header .overlay {
@@ -1519,4 +1520,3 @@ body.offcanvas {
   .hero-lead { font-size: 15px; }
   .hero-cta { padding: 10px 16px; font-size: 14px; }
 }
-
