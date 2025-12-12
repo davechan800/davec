@@ -1433,6 +1433,7 @@ body.offcanvas {
     background: linear-gradient(135deg, #0d47a1 0%, #1565c0 50%, #1976d2 100%);
     color: white;
     min-height: 120vh;
+    height: auto;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -1455,6 +1456,7 @@ body.offcanvas {
     z-index: 2;
     width: 100%;
     padding: 120px 0;
+    min-height: 100vh; 
 }
 
 .hero-text-container {
