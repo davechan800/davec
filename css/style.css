@@ -379,7 +379,6 @@ body.offcanvas {
 .colorlib-work,
 .colorlib-about,
 .colorlib-services,
-
 .colorlib-contact {
   padding-top: 4em;
   padding-bottom: 9em;
@@ -394,7 +393,6 @@ body.offcanvas {
     .colorlib-work,
     .colorlib-about,
     .colorlib-services,
-    
     .colorlib-contact {
       padding-top: 5em;
       padding-bottom: 8em; } }
@@ -1429,146 +1427,3 @@ body.offcanvas {
 
 .js .animate-box {
   opacity: 0; }
-
-
-/* -------------------------
-   Align hero with main content
-   ------------------------- */
-
-/* Make hero sit inside the same content column as #colorlib-main */
-.hero-header {
-  width: calc(100% - 300px); /* match #colorlib-main width */
-  margin-left: 300px;        /* push it right of the fixed aside */
-  box-sizing: border-box;
-  /* keep other hero rules (height, padding) from your existing rules */
-}
-
-/* On mobile: aside collapses, hero should be full width */
-@media screen and (max-width: 768px) {
-  .hero-header {
-    width: 100%;
-    margin-left: 0;
-    padding-left: 1.2em;   /* small inner padding for breathing room */
-    padding-right: 1.2em;
-  }
-}
-
-/* -------------------------
-   Reduce vertical gap between hero and next section
-   ------------------------- */
-
-/* Remove any large bottom margin on the hero */
-.hero-header {
-  margin-bottom: 1.6em !important; /* small gap */
-  padding-bottom: 1.2em;            /* keep some breathing room */
-}
-
-/* Reduce top padding of the typical following content areas */
-.colorlib-experience,
-.colorlib-skills,
-.colorlib-education,
-.colorlib-blog,
-.colorlib-work,
-.colorlib-about,
-.colorlib-services,
-.colorlib-contact {
-  padding-top: 1.6em !important; /* was 4em in template — lower to reduce gap */
-}
-
-/* If the grouped selector in your stylesheet still forces padding on hero,
-   this forces it off (defensive override) */
-.colorlib-experience,
-.colorlib-skills,
-.colorlib-education,
-.colorlib-blog,
-.colorlib-work,
-.colorlib-about,
-.colorlib-services,
-.colorlib-contact,
-.hero-header {
-  /* ensure hero doesn't inherit large top padding from grouped selectors */
-  padding-top: 0 !important;
-}
-
-/* Also zero out margin on the first heading in next section (collapsing margins) */
-.colorlib-experience h1:first-child,
-.colorlib-experience h2:first-child,
-.colorlib-about h1:first-child,
-.colorlib-about h2:first-child,
-.colorlib-services h1:first-child,
-.colorlib-services h2:first-child {
-  margin-top: 0 !important;
-}
-
-/* -------------------------
-   Optional visual polish (keeps line with aside)
-   ------------------------- */
-
-/* If your #colorlib-main has left padding, adjust hero inner padding to match */
-#colorlib-main {
-  padding-left: 0; /* leave this if you want exact alignment; otherwise adjust as needed */
-}
-
-/* If you prefer hero content centered within the same width as #colorlib-main container,
-   you can wrap hero content in .container-wrap and center it:
-   <section class="hero-header"><div class="container-wrap">...content...</div></section>
-   Then add:
-*/
-.hero-header .container-wrap {
-  max-width: 1170px;
-  margin: 0 auto;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-/* -------------------------
-   Small-screen check: ensure no unexpected gaps
-   ------------------------- */
-@media screen and (max-width: 480px) {
-  .hero-header { padding-top: 22px; padding-bottom: 18px; }
-  .hero-header .slider-text-inner { padding-left: 8px; padding-right: 8px; }
-  .colorlib-experience, .colorlib-about, .colorlib-services { padding-top: 1.2em !important; }
-}
-/* ------------------------------
-   HERO HEADER — LEFT ALIGN + SMALL GAP
-   ------------------------------ */
-
-/* Align hero with rest of the page */
-.hero-header {
-  width: calc(100% - 300px);     /* matches #colorlib-main */
-  margin-left: 300px;            /* positions it correctly next to sidebar */
-  padding-top: 20px !important;  /* small, clean spacing */
-  padding-bottom: 20px !important;
-  margin-bottom: 1.2em !important; /* reduces gap below */
-  box-sizing: border-box;
-  text-align: left !important;   /* force left alignment */
-}
-
-/* Remove accidental padding inherited from global section rules */
-.colorlib-experience,
-.colorlib-skills,
-.colorlib-education,
-.colorlib-blog,
-.colorlib-work,
-.colorlib-about,
-.colorlib-services,
-.colorlib-contact {
-  padding-top: 2em !important;  /* reduced from template’s 4-5em */
-}
-
-/* Remove top margin from next section heading (prevents collapsed margin gap) */
-.colorlib-about h2:first-child,
-.colorlib-services h2:first-child,
-.colorlib-work h2:first-child,
-.colorlib-experience h2:first-child {
-  margin-top: 0 !important;
-}
-
-/* Mobile: hero should be full width again */
-@media screen and (max-width: 768px) {
-  .hero-header {
-    width: 100% !important;
-    margin-left: 0 !important;
-    padding: 30px 1.2em !important;
-  }
-}
