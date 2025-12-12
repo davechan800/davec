@@ -1782,24 +1782,59 @@ body.offcanvas {
     }
 }
 
-/* OVERRIDE FOR HERO SECTION */
-#colorlib-hero.static-hero {
-    min-height: 130vh !important;
-    height: auto !important;
-    overflow: visible !important;
-    background: linear-gradient(135deg, #0d47a1 0%, #1565c0 50%, #1976d2 100%) !important;
-    margin-bottom: 0 !important;
+
+/* === APPENDED: Hero overrides (left-aligned, compact, aligned with main) === */
+.hero-header {
+  width: calc(100% - 300px);
+  margin-left: 300px;
+  box-sizing: border-box;
+  min-height: 320px;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+  margin-bottom: 1.2em !important;
+  text-align: left !important;
 }
 
-/* Remove template constraints */
-#colorlib-hero .flexslider,
-#colorlib-hero .slides,
-#colorlib-hero .flex-control-nav {
-    display: none !important;
+@media screen and (max-width: 768px) {
+  .hero-header {
+    width: 100% !important;
+    margin-left: 0 !important;
+    padding-left: 1.2em !important;
+    padding-right: 1.2em !important;
+  }
 }
 
-/* Fix content container */
-.hero-static-content {
-    min-height: 100vh !important;
-    padding-bottom: 100px !important;
+/* Reduce top padding on main content sections to close gap */
+.colorlib-experience,
+.colorlib-skills,
+.colorlib-education,
+.colorlib-blog,
+.colorlib-work,
+.colorlib-about,
+.colorlib-services,
+.colorlib-contact {
+  padding-top: 2em !important;
 }
+
+/* Remove top margin from first headings in following sections to prevent collapsing gap */
+.colorlib-experience h1:first-child,
+.colorlib-experience h2:first-child,
+.colorlib-about h1:first-child,
+.colorlib-about h2:first-child,
+.colorlib-services h1:first-child,
+.colorlib-services h2:first-child {
+  margin-top: 0 !important;
+}
+
+/* Constrain hero text width for readability */
+.hero-text-inner {
+  max-width: 880px;
+}
+
+/* Slight typography adjustments for compact hero */
+.main-title { font-size: 3.2rem; line-height: 1.05; margin-bottom: 1rem; }
+.subtitle   { font-size: 1.15rem; }
+.tagline    { font-size: 1rem; }
+
+/* Defensive: ensure hero isn't affected by grouped padding rules */
+.hero-header, .hero-header * { box-sizing: border-box; }
