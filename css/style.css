@@ -1432,7 +1432,7 @@ body.offcanvas {
 /* ---------- Hero tidy-up (place after existing CSS) ---------- */
 .hero-header { 
   position: relative;
-  min-height: 85vh;
+  min-height: 380px;
   display: flex;
   align-items: center;
   margin-bottom: 6em;
