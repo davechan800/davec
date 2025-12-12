@@ -1434,7 +1434,7 @@ body.offcanvas {
 
 .hero-header { 
   position: relative;
-  width: 100%;                 /* stretch full width */
+  max-width: 768px;                 /* stretch full width */
   min-height: 380px;
   padding: 60px 0;             /* balanced height */
   display: flex;
