@@ -1942,3 +1942,123 @@ body, #colorlib-page {
 
 /* Remove any accidental horizontal scroll by enforcing no overflow on root */
 html, body { overflow-x: hidden; }
+
+
+/* ---------- Quick layout fixes (paste at end of style_fixed2.css) ---------- */
+
+/* 1) Remove/hide left menu and make main content full width (reversible) */
+#colorlib-aside {
+  display: none !important;
+  visibility: hidden !important;
+  transform: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Make main area stretch and align with other pages */
+#colorlib-main {
+  width: 100% !important;
+  margin: 0 !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  box-sizing: border-box;
+}
+
+/* 2) Left-align hero content and make hero same width as main content */
+#colorlib-hero, .hero-static-content, .hero-text-container {
+  width: 100% !important;
+  max-width: 1200px;          /* keeps long lines readable on very large screens */
+  margin-left: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+/* reduce hero height/space and ensure consistent bottom gap */
+.static-hero, .hero-static-content {
+  min-height: 420px;          /* reduced from very tall */
+  padding-top: 60px;          /* keeps breathing space */
+  padding-bottom: 18px;       /* reduce bottom gap */
+}
+.hero-static-content { padding-bottom: 12px; }
+
+/* reduce gap between hero and next sections */
+.colorlib-experience,
+.colorlib-skills,
+.colorlib-education,
+.colorlib-blog,
+.colorlib-work,
+.colorlib-about,
+.colorlib-services,
+.colorlib-contact {
+  padding-top: 1.2em !important;
+}
+
+/* 3) Ensure no horizontal scroll anywhere */
+html, body, #colorlib-page {
+  overflow-x: hidden !important;
+}
+
+/* 4) Feature boxes — prevent overflow and make responsive */
+.hero-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: stretch;
+  margin-top: 18px;
+}
+
+.feature-item {
+  flex: 1 1 260px;       /* responsive cards: at least 260px, grow to fit */
+  min-width: 220px;
+  box-sizing: border-box;
+  padding: 14px 16px;
+  border-radius: 8px;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Defensive: icon padding previously pushed text — reset on small screens */
+.colorlib-feature .colorlib-text,
+.colorlib-feature .colorlib-text p {
+  padding-left: 0 !important;
+}
+
+/* 5) Mobile-specific improvements */
+@media screen and (max-width: 992px) {
+  /* make sure hero content fits inside mobile viewport */
+  #colorlib-main, #colorlib-hero, .hero-static-content, .hero-text-container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    max-width: 100% !important;
+  }
+
+  /* increase the subtitle/tagline for better legibility */
+  .subtitle { font-size: 1.6rem !important; line-height: 1.2; }
+  .tagline  { font-size: 1.15rem !important; }
+
+  /* feature items become full width stacked */
+  .feature-item { flex: 1 1 100% !important; min-width: 0 !important; }
+
+  /* remove any leftover large min-height */
+  .static-hero { min-height: auto !important; padding-top: 48px !important; padding-bottom: 12px !important; }
+
+  /* reduce the hero bottom gap on mobile */
+  .hero-static-content { padding-bottom: 8px !important; margin-bottom: 6px !important; }
+}
+
+/* 6) Slightly larger desktop subtitle / heading (so it feels balanced) */
+.main-title { font-size: 3.6rem !important; }  /* adjust to taste */
+.subtitle   { font-size: 1.6rem !important; }
+
+/* 7) Ensure icons do not push layout */
+.services .icon, .services .icon2, .colorlib-feature .colorlib-icon {
+  width: auto !important;
+  height: auto !important;
+  margin-right: 0 !important;
+  display: inline-block !important;
+}
+
+/* End of quick layout fixes */
