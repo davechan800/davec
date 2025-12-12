@@ -1436,7 +1436,7 @@ body.offcanvas {
   position: relative;
   max-width: 768px;                 /* stretch full width */
   min-height: 380px;
-  padding: 60px 0;             /* balanced height */
+  padding: 20px 0;             /* balanced height */
   display: flex;
   align-items: center;
   margin-bottom: 3em;          /* reduced footer gap */
