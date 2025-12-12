@@ -1838,3 +1838,107 @@ body.offcanvas {
 
 /* Defensive: ensure hero isn't affected by grouped padding rules */
 .hero-header, .hero-header * { box-sizing: border-box; }
+
+
+/* === USER REQUESTED FIXES: uniform background, remove blue boxes, mobile layout === */
+
+/* Make entire site use a uniform light background */
+body, #colorlib-page {
+  background-color: #f7f8fb !important;
+}
+
+/* Remove blue heavy backgrounds from service/project descriptors */
+.services,
+.project,
+.project .desc,
+.services .icon {
+  background: transparent !important;
+  border-bottom: 2px solid transparent !important;
+  box-shadow: none !important;
+}
+
+/* Keep icons colored but remove full background square */
+.services .icon { 
+  background: transparent !important;
+  width: auto;
+  height: auto;
+  position: relative;
+  top: 0;
+  left: 0;
+  box-shadow: none;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+/* Ensure project overlay doesn't overflow/mobile-safe */
+.project {
+  height: auto;
+}
+
+/* Prevent "Custom web development" box from exceeding width on mobile:
+   remove large left padding applied for icons, constrain inner widths */
+.colorlib-feature .colorlib-text {
+  padding-left: 120px;
+}
+@media screen and (max-width: 992px) {
+  .colorlib-feature .colorlib-text {
+    padding-left: 20px !important;
+  }
+  .hero-text-inner, .hero-text-container, .colorlib-feature, .services, .project {
+    max-width: 100% !important;
+    overflow: visible !important;
+    box-sizing: border-box;
+    padding-right: 20px !important;
+    padding-left: 20px !important;
+  }
+
+  /* ensure icons do not push layout */
+  .services .icon i, .colorlib-feature .colorlib-icon i {
+    font-size: 28px !important;
+  }
+}
+
+/* Fix mobile aside/offcanvas behavior: full height, scrollable, show full menu */
+#colorlib-aside {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  z-index: 9999;
+  transform: translateX(0); /* default visible on large; we'll hide on mobile */
+}
+
+/* Hide aside on small screens by default (off-canvas) and allow body.offcanvas to show it */
+@media screen and (max-width: 768px) {
+  #colorlib-aside { transform: translateX(-100%); transition: transform 0.28s ease-in-out; }
+  body.offcanvas #colorlib-aside { transform: translateX(0); background: #f7f8fb; }
+  /* ensure the main content shifts when menu opens */
+  body.offcanvas #colorlib-main { transform: translateX(300px); transition: transform 0.28s ease-in-out; }
+  /* make nav toggle visible */
+  .colorlib-nav-toggle { visibility: visible; opacity: 1; }
+  /* ensure aside menu items are fully visible */
+  #colorlib-aside #colorlib-main-menu { padding-top: 3.5em; }
+  #colorlib-aside .author-img { margin-top: 1.2em; }
+}
+
+/* Defensive: remove any hard-coded widths that could cause overflow */
+.container, .container-fluid, .hero-text-inner, .hero-text-container {
+  max-width: 100% !important;
+  width: auto !important;
+}
+
+/* Reduce gap below hero even more on mobile */
+@media screen and (max-width: 768px) {
+  .hero-header { margin-bottom: 0.8em !important; padding-bottom: 18px !important; }
+  .colorlib-experience, .colorlib-about, .colorlib-services { padding-top: 1.6em !important; }
+}
+
+/* Tweak menu items so full list is visible */
+#colorlib-aside #colorlib-main-menu ul { max-height: calc(100vh - 160px); overflow-y: auto; padding-bottom: 20px; }
+#colorlib-aside #colorlib-main-menu ul li { display: block; text-align: left; padding: 8px 20px; }
+#colorlib-aside #colorlib-main-menu ul li a { display: block; width: 100%; }
+
+/* Remove any accidental horizontal scroll by enforcing no overflow on root */
+html, body { overflow-x: hidden; }
