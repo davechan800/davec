@@ -2079,3 +2079,18 @@ html, body, #colorlib-page {
     font-weight: 500;
     color: #fff;
 }
+
+/* Hero padding overrides */
+#colorlib-hero .container-fluid,
+#colorlib-hero .row,
+#colorlib-hero [class^="col-"],
+#colorlib-hero .hero-text-inner,
+#colorlib-hero .desc {
+    padding: 0;
+}
+
+#colorlib-hero h1,
+#colorlib-hero h2,
+#colorlib-hero p {
+    margin-bottom: 10px;
+}
