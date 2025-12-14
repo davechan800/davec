@@ -1890,6 +1890,7 @@ body, #colorlib-page {
     box-sizing: border-box;
     padding-right: 20px !important;
     padding-left: 20px !important;
+   
   }
 
   /* ensure icons do not push layout */
@@ -2080,3 +2081,6 @@ html, body, #colorlib-page {
     color: #fff;
 }
 
+.desc {
+    padding: 16px 18px;
+}
