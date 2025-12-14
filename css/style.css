@@ -2080,17 +2080,14 @@ html, body, #colorlib-page {
     color: #fff;
 }
 
-/* Hero padding overrides */
-#colorlib-hero .container-fluid,
-#colorlib-hero .row,
-#colorlib-hero [class^="col-"],
-#colorlib-hero .hero-text-inner,
-#colorlib-hero .desc {
-    padding: 0;
+#colorlib-hero {
+    padding: 0 !important;
 }
 
-#colorlib-hero h1,
-#colorlib-hero h2,
-#colorlib-hero p {
-    margin-bottom: 10px;
+#colorlib-hero .hero-static-content,
+#colorlib-hero .hero-text-container,
+#colorlib-hero .hero-text-inner,
+#colorlib-hero .desc {
+    padding: 0 !important;
 }
+
